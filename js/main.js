@@ -2,6 +2,8 @@
 
 $(document).ready(onInit);
 
+$('.contact-me-submit-btn').click(onContactMeSubmit);
+
 
 function onInit() {
     createProjs();
@@ -21,7 +23,7 @@ function renderProjs() {
                     <i class="fa fa-plus fa-3x"></i>
                 </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/${proj.url}" alt="">
+            <img class="img-fluid" src="img/portfolio/${proj.id}.png" alt="">
           </a>
             <div class="portfolio-caption">
                 <h4>${proj.name}</h4>
@@ -54,12 +56,13 @@ function renderModals() {
                                     <!-- Project Details Go Here -->
                                     <h2>${proj.name}</h2>
                                     <p class="item-intro text-muted">${proj.title}</p>
-                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.url}" alt="">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.id}.png" alt="">
                                         <p>${proj.desc}</p>
                                         <ul class="list-inline">
                                             <li>Date: ${proj.publishedAt}</li>
                                             <li>Client: Coding Academy</li>
                                             <li>Category: ${proj.labels}</li>
+                                            <li><a href="${proj.url}" target="_label">Open project</a></li>
                                         </ul>
                                         <button class="btn btn-primary" data-dismiss="modal" type="button">
                                             <i class="fa fa-times"></i>
@@ -76,3 +79,18 @@ function renderModals() {
 
     $('.modals-container').html(strHTML);
 }
+
+function onContactMeSubmit() {
+    var userEmail = $('#email').val();
+    var formSubject = $('#subject').val();
+    var formMessage = $('#Message').val();
+
+    console.log(formMessage);
+
+    var contactWindow = `https://mail.google.com/mail/u/0/?fs=1&to=mayalmog@gmail.com&su=${formSubject}&body=${formMessage}&bcc=${userEmail}&tf=cm`;
+
+    window.open(
+        contactWindow, "_blank");
+
+}
+
