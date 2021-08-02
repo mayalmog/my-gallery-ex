@@ -635,6 +635,8 @@ header.masthead .intro-text .intro-heading {
 
 .about-description {
     max-width: 80%;
+    font-size: 20px;
+    ;
 }
 
 @media (max-width: 800px) {
