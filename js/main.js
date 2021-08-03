@@ -23,7 +23,7 @@ function renderProjs() {
                     <i class="fa fa-plus fa-3x"></i>
                 </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/${proj.id}.png" alt="">
+            <img class="img-fluid" src="../img/portfolio/${proj.id}.png" alt="">
           </a>
             <div class="portfolio-caption">
                 <h4>${proj.name}</h4>
@@ -56,7 +56,7 @@ function renderModals() {
                                     <!-- Project Details Go Here -->
                                     <h2>${proj.name}</h2>
                                     <p class="item-intro text-muted">${proj.title}</p>
-                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.id}.png" alt="">
+                                    <img class="img-fluid d-block mx-auto" src="../img/portfolio/${proj.id}.png" alt="">
                                         <p>${proj.desc}</p>
                                         <ul class="list-inline">
                                             <li>Date: ${proj.publishedAt}</li>
@@ -84,8 +84,6 @@ function onContactMeSubmit() {
     var userEmail = $('#email').val();
     var formSubject = $('#subject').val();
     var formMessage = $('#Message').val();
-
-    console.log(formMessage);
 
     var contactWindow = `https://mail.google.com/mail/u/0/?fs=1&to=mayalmog@gmail.com&su=${formSubject}&body=${formMessage}&bcc=${userEmail}&tf=cm`;
 
